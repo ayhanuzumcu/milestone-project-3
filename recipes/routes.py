@@ -1,3 +1,5 @@
+import os
+from flask import Flask
 from flask import render_template
 from recipes import app, db
 from recipes.models import Cuisine, Users
