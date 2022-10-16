@@ -171,3 +171,17 @@ def edit_recipe(recipe_id):
 
     cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
     return render_template("edit_recipe.html", recipe=recipe, cuisines=cuisines)
+
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+
+    recipe = mydb["recipes"].find_one({"_id": ObjectId(recipe_id)})
+
+    if "user" not in session or session["user"] != recipe["created_by"]:
+        flash("You can only delete your own tasks!")
+        return redirect(url_for("get_tasks"))
+
+    mydb["recipes"].delete_one({"_id": ObjectId(recipe_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("get_recipes"))
