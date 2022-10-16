@@ -1,14 +1,91 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h3 class="center-align orange-text text-darken-4">Recipe List</h3>
+
+
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_recipe') }}" class="btn-large orange darken-3 text-shadow">
+            Add Recipe <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
+<!-- 
+<div class="row">
     {% for recipe in recipes %}
-        {{ recipe.cuisine_name }}<br>
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.serves }}<br>
-        {{ recipe.cooking_time }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.instructions }}<br>
-        {{ recipe.created_by }}<br>
+        <div class="col s12 m4">
+            <div class="card light-blue darken-4 text-shadow center-align">
+                <div class="card-content white-text">
+                    <span class="card-title">{{ recipe.recipe_name }}</span>
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('add_recipe') }}" class="btn green accent-4">Edit</a>
+                    <a href="{{ url_for('add_recipe') }}" class="btn light-blue lighten-1">Delete</a>
+                </div>
+            </div>
+        </div>
     {% endfor %}
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+<ul class="collapsible">
+    {% for recipe in recipes %}
+     <li>
+        <div class="collapsible-header orange darken-1 white-text text-shadow">
+            <div>
+                <p><i class="fas fa-caret-down"></i><strong>{{ recipe.recipe_name }}, {{ recipe.cuisine_name }} Cuisine - <em>created by: {{ recipe.created_by }}</em></strong></p>
+                
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <div class="row s12">
+                <div class="col m6 s12">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ recipe.img_url }}">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col m6 s12">
+                    <div class="row">
+                        <div class="col s12">
+                            <p><strong>Coking Time: </strong>{{ recipe.cooking_time }}</p>
+                            
+                            <p><strong>Serves: </strong>{{ recipe.serves }}</p>
+                            <p><strong>Ingredients: </strong></p>
+                            
+                            <p>{{ recipe.ingredients }}</p>
+                            
+                            <p><strong>Instructions: </strong></p>
+                            <p>{{ recipe.instructions }}</p>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col s6">
+                    {{ recipe.ingredients }}
+                </div>
+                <div class="col s6">
+                    {{ recipe.instructions }}
+                </div>
+            </div> -->
+        </div>
+    </li>
+    {% endfor %}
+</ul> 
 
 {% endblock %}

@@ -87,3 +87,27 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
+    if request.method == "POST":
+        recipe = {
+            "cuisine_name": request.form.get("cuisine_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "prep_time": request.form.get("prep_time"),
+            "cooking_time": request.form.get("cooking_time"),
+            "serves": request.form.get("serves"),
+            "ingredients": request.form.get("ingredients"),
+            "instructions": request.form.get("instructions"),
+            "img_url": request.form.get("img_url"),
+            "created_by": session["user"]
+        }
+        mycol = mydb["recipes"]
+        mycol.insert_one(recipe)  
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_recipes"))
+    cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
+    return render_template("add_recipe.html", cuisines=cuisines)
+
+    
