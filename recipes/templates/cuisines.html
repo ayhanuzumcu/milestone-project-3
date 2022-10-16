@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align orange-text text-darken-4">Cuisine List</h3>
+
+
+<!-- <div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_recipe') }}" class="btn-large orange darken-3 text-shadow">
+            Add Recipe <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div> -->
+ 
+<div class="row">
+    {% for cuisine in cuisines %}
+        <div class="col s12 m4">
+            <div class="card orange darken-4 text-shadow center-align">
+                <div class="card-content white-text">
+                    <span class="card-title">Cuisine Name: <em>{{ cuisine.cuisine_name }}</em></span>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="btn green accent-4">Edit</a>
+                    <a href="#" class="btn light-blue lighten-1">Delete</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ul class="collapsible">
+    {% for recipe in recipes %}
+     <li>
+        <div class="collapsible-header orange darken-1 white-text text-shadow">
+            <div class="col s3 offset-m2">
+                <i class="fas fa-caret-down"></i>
+                {% if session.user|lower == recipe.created_by|lower %}
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small green accent-4">Done</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                {% endif %}
+            </div>
+            <div class="col s3" style="padding-left: 20px ;">
+                <strong>{{ recipe.recipe_name }}, {{ recipe.cuisine_name }} Cuisine - <em>created by: {{ recipe.created_by }}</em></strong>
+                
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <div class="row s12">
+                <div class="col m6 s12">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ recipe.img_url }}">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col m6 s12">
+                    <div class="row">
+                        <div class="col s12">
+                            <p><strong>Coking Time: </strong>{{ recipe.cooking_time }}</p>
+                            
+                            <p><strong>Serves: </strong>{{ recipe.serves }}</p>
+                            <p><strong>Ingredients: </strong></p>
+                            
+                            <p>{{ recipe.ingredients }}</p>
+                            
+                            <p><strong>Instructions: </strong></p>
+                            <p>{{ recipe.instructions }}</p>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>  -->
+
+{% endblock %}

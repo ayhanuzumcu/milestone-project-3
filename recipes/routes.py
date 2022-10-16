@@ -185,3 +185,14 @@ def delete_recipe(recipe_id):
     mydb["recipes"].delete_one({"_id": ObjectId(recipe_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("get_recipes"))
+
+
+@app.route("/get_cuisines")
+def get_cuisines():
+
+    if "user" not in session or session["user"] != "admin":
+        flash("You must be admin to manage categories!")
+        return redirect(url_for("get_recipes"))
+
+    cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
+    return render_template("cuisines.html", cuisines=cuisines)
