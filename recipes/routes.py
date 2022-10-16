@@ -110,4 +110,64 @@ def add_recipe():
     cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
     return render_template("add_recipe.html", cuisines=cuisines)
 
+
+# @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+# def edit_recipe():
+#     if request.method == "POST":
+#         submit = {
+#             "cuisine_name": request.form.get("cuisine_name"),
+#             "recipe_name": request.form.get("recipe_name"),
+#             "prep_time": request.form.get("prep_time"),
+#             "cooking_time": request.form.get("cooking_time"),
+#             "serves": request.form.get("serves"),
+#             "ingredients": request.form.get("ingredients"),
+#             "instructions": request.form.get("instructions"),
+#             "img_url": request.form.get("img_url"),
+#             "created_by": session["user"]
+#         }
+#         mycol = mydb["recipes"]
+#         mycol.update_one({"_id": ObjectId(recipe_id)}, { "$set": submit })  
+#         flash("Recipe Successfully Updated")
+
+#     recipe = mydb["recipes"].find_one({"_id": ObjectId(recipe_id)})
+
+#     cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
+#     return render_template("edit_recipe.html", recipe=recipe, cuisines=cuisines)
+
+
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
     
+    recipe = mydb["recipes"].find_one({"_id": ObjectId(recipe_id)})
+
+    # if "user" not in session or session["user"] != task["created_by"]:
+    #     flash("You can only edit your own tasks!")
+    #     return redirect(url_for("get_tasks"))
+
+    if request.method == "POST":
+        
+        submit = {
+            "cuisine_name": request.form.get("cuisine_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "prep_time": request.form.get("prep_time"),
+            "cooking_time": request.form.get("cooking_time"),
+            "serves": request.form.get("serves"),
+            "ingredients": request.form.get("ingredients"),
+            "instructions": request.form.get("instructions"),
+            "img_url": request.form.get("img_url"),
+            "created_by": session["user"]
+        }
+        # mycol = mydb["recipes"]
+        mydb["recipes"].update_one({"_id": ObjectId(recipe_id)}, { "$set": submit })
+        flash("Recipe Successfully Updated")
+        return redirect(url_for("get_recipes"))
+        
+
+        # mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
+        # flash("Task Successfully Updated")
+
+    # categories = list(Category.query.order_by(Category.category_name).all())
+    # return render_template("edit_task.html", task=task, categories=categories)
+
+    cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
+    return render_template("edit_recipe.html", recipe=recipe, cuisines=cuisines)

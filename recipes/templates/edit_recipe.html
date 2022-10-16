@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align orange-text text-darken-4">Edit Recipe</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix orange-text text-darken-4"></i>
+                <select id="cuisine_name" name="cuisine_name" class="validate" required>
+                  <option value="" disabled selected>Please Select</option>
+                  {% for cuisine in cuisines %}
+                    <option value="{{ cuisine.cuisine_name }}">{{ cuisine.cuisine_name }}</option>
+                  {% endfor %}
+                </select>
+                <label for="cuisine_name">Cuisine Name</label>
+              </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pencil-alt prefix orange-text text-darken-4"></i>
+                <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" value="{{ recipe.recipe_name }}" type="text" class="validate"
+                    required>
+                <label for="recipe_name">Recipe Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-clock prefix orange-text text-darken-4"></i>
+                <input id="prep_time" name="prep_time" type="text" value="{{ recipe.prep_time }}"
+                    class="validate" required>
+                <label for="prep_time">Preparation Time eg: 10 mins / 30 mins</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-clock prefix orange-text text-darken-4"></i>
+                <input id="cooking_time" name="cooking_time" type="text" value="{{ recipe.cooking_time }}"
+                    class="validate" required>
+                <label for="cooking_time">Cooking Time eg: 15 mins / 1 hr 20 mins</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-utensils prefix orange-text text-darken-4"></i>
+                <input id="serves" name="serves" type="number" value="{{ recipe.serves }}"
+                    class="validate" required>
+                <label for="serves">Serves (Numbers only)</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-align-left prefix orange-text text-darken-4"></i>
+                <textarea id="ingredients" name="ingredients" minlength="5" maxlength="200"
+                    class="materialize-textarea validate" required>{{ recipe.ingredients }}</textarea>
+                <label for="ingredients">Ingredients - place each ingredient on a new line</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-align-left prefix orange-text text-darken-4"></i>
+                <textarea id="instructions" name="instructions" minlength="5" maxlength="200"
+                class="materialize-textarea validate" required>{{ recipe.instructions }}</textarea>
+                <label for="instructions">Instructions - place each step on a new line</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-image prefix orange-text text-darken-4"></i>
+                <input id="img_url" name="img_url" type="url"  value="{{ recipe.img_url }}"class="validate">
+                <label for="img_url">Edit Image URL</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large orange darken-3 text-shadow">
+                    Edit Recipe <i class="fas fa-plus-square right"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
