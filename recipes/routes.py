@@ -111,38 +111,10 @@ def add_recipe():
     return render_template("add_recipe.html", cuisines=cuisines)
 
 
-# @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
-# def edit_recipe():
-#     if request.method == "POST":
-#         submit = {
-#             "cuisine_name": request.form.get("cuisine_name"),
-#             "recipe_name": request.form.get("recipe_name"),
-#             "prep_time": request.form.get("prep_time"),
-#             "cooking_time": request.form.get("cooking_time"),
-#             "serves": request.form.get("serves"),
-#             "ingredients": request.form.get("ingredients"),
-#             "instructions": request.form.get("instructions"),
-#             "img_url": request.form.get("img_url"),
-#             "created_by": session["user"]
-#         }
-#         mycol = mydb["recipes"]
-#         mycol.update_one({"_id": ObjectId(recipe_id)}, { "$set": submit })  
-#         flash("Recipe Successfully Updated")
-
-#     recipe = mydb["recipes"].find_one({"_id": ObjectId(recipe_id)})
-
-#     cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
-#     return render_template("edit_recipe.html", recipe=recipe, cuisines=cuisines)
-
-
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     
     recipe = mydb["recipes"].find_one({"_id": ObjectId(recipe_id)})
-
-    # if "user" not in session or session["user"] != task["created_by"]:
-    #     flash("You can only edit your own tasks!")
-    #     return redirect(url_for("get_tasks"))
 
     if request.method == "POST":
         
@@ -157,18 +129,11 @@ def edit_recipe(recipe_id):
             "img_url": request.form.get("img_url"),
             "created_by": session["user"]
         }
-        # mycol = mydb["recipes"]
+        
         mydb["recipes"].update_one({"_id": ObjectId(recipe_id)}, { "$set": submit })
         flash("Recipe Successfully Updated")
         return redirect(url_for("get_recipes"))
         
-
-        # mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
-        # flash("Task Successfully Updated")
-
-    # categories = list(Category.query.order_by(Category.category_name).all())
-    # return render_template("edit_task.html", task=task, categories=categories)
-
     cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
     return render_template("edit_recipe.html", recipe=recipe, cuisines=cuisines)
 
@@ -179,11 +144,11 @@ def delete_recipe(recipe_id):
     recipe = mydb["recipes"].find_one({"_id": ObjectId(recipe_id)})
 
     if "user" not in session or session["user"] != recipe["created_by"]:
-        flash("You can only delete your own tasks!")
-        return redirect(url_for("get_tasks"))
+        flash("You can only delete your own recipes!")
+        return redirect(url_for("get_recipes"))
 
     mydb["recipes"].delete_one({"_id": ObjectId(recipe_id)})
-    flash("Task Successfully Deleted")
+    flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
 
 
@@ -191,8 +156,52 @@ def delete_recipe(recipe_id):
 def get_cuisines():
 
     if "user" not in session or session["user"] != "admin":
-        flash("You must be admin to manage categories!")
+        flash("You must be admin to manage cuisines!")
         return redirect(url_for("get_recipes"))
 
     cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
     return render_template("cuisines.html", cuisines=cuisines)
+
+
+@app.route("/add_cuisine", methods=["GET", "POST"])
+def add_cuisine():
+    
+    if "user" not in session or session["user"] != "admin":
+        flash("You must be admin to manage cuisines!")
+        return redirect(url_for("get_recipes"))
+
+    if request.method == "POST":
+        cuisine = Cuisine(cuisine_name=request.form.get("cuisine_name"))
+        db.session.add(cuisine)
+        db.session.commit()
+        return redirect(url_for("get_cuisines"))
+    cuisine = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
+    return render_template("add_cuisine.html", cuisine=cuisine)
+
+
+@app.route("/edit_cuisine/<int:cuisine_id>", methods=["GET", "POST"])
+def edit_cuisine(cuisine_id):
+    if "user" not in session or session["user"] != "admin":
+        flash("You must be admin to manage cuisines!")
+        return redirect(url_for("get_recipes"))
+    
+    cuisine = Cuisine.query.get_or_404(cuisine_id)
+    if request.method == "POST":
+        cuisine.cuisine_name = request.form.get("cuisine_name")
+        db.session.commit()
+        return redirect(url_for("get_cuisines"))
+    return render_template("edit_cuisine.html", cuisine=cuisine)
+
+
+@app.route("/delete_cuisine/<int:cuisine_id>")
+def delete_cuisine(cuisine_id):
+    if session["user"] != "admin":
+        flash("You must be admin to manage cuisines!")
+        return redirect(url_for("get_recipes"))
+
+    cuisine = Cuisine.query.get_or_404(cuisine_id)
+    db.session.delete(cuisine)
+    db.session.commit()
+    # c_name = mydb["recipes"].find()
+    mydb["recipes"].delete_many({"cuisine_name": str(cuisine)})
+    return redirect(url_for("get_cuisines"))

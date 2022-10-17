@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align orange-text text-darken-4">Add Cuisine</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_cuisine') }}">
+
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pencil-alt prefix orange-text text-darken-4"></i>
+                <input id="cuisine_name" name="cuisine_name" minlength="5" maxlength="50" type="text" class="validate"
+                    required>
+                <label for="cuisine_name">Cuisine Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large orange darken-3 text-shadow">
+                    Add Cuisine <i class="fas fa-plus-square right"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
