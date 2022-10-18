@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align orange-text text-darken-4">Full Recipe</h3>
+<div class="container">
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col s12">
+            <div class="card orange-text text-darken-4 hoverable">
+                <div class="card-content center-align">
+
+                    <span class="card-title">
+                        <p><strong>{{ recipe.recipe_name }}, {{ recipe.cuisine_name }} Cuisine</strong></p>
+                    </span>
+                    <img class="full-recipe-img" src="{{ recipe.img_url }}">
+                </div>
+                <div class="row">
+                    <div class="card-content orange-text text-darken-4 center-align">
+
+                        <div class="col s12 m3">
+                            <p><strong>Prep Time:</strong></p>
+                            <p>{{ recipe.prep_time }}</p>
+                        </div>
+                        <div class="col s12 m3">
+                            <p><strong>Cooking Time:</strong></p>
+                            <p>{{ recipe.cooking_time }}</p>
+                        </div>
+                        <div class="col s12 m3">
+                            <p><strong>Serves:</strong></p>
+                            <p>{{ recipe.serves }}</p>
+                        </div>
+                        <div class="col s12 m3">
+                            <p><strong>Created by:</strong></p>
+                            <p>{{ recipe.created_by }}</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card-content orange-text center-align text-darken-4">
+
+                        <div class="col s12 m12">
+                            <p><strong>Ingredients:</strong></p>
+                            <p>{{ recipe.ingredients }}</p>
+                            <p class="section"></p>
+                            <p><strong>Instructions:</strong></p>
+                            <p>{{ recipe.instructions }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-action">
+                    {% if session.user|lower == recipe.created_by|lower %}
+                    <a href="#modal1-{{ recipe._id }}" class="btn-small  red darken-2 modal-trigger">Delete</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                        class="btn-small orange darken-3">Edit</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div id="modal1-{{ recipe._id }}" class="modal orange darken-2 white-text text-shadow s12 m4 offset-m4">
+            <div class="modal-content">
+                <h4>Do you really want to delete this recipe?</h4>
+                <p>This cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                    class="modal-close btn-small  orange darken-2">Yes, delete this recipe</a>
+                <a href="{{ url_for('get_recipes') }}" role="button" class="modal-close btn-small red accent-4">No, take
+                    me
+                    back</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    {% endfor %}
+</div>
+
+{% endblock %}

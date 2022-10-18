@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_cuisine') }}" class="btn-large orange darken-3 text-shadow">
+        <a href="{{ url_for('add_cuisine') }}" class="btn-large orange darken-3 hoverable">
             Add Cuisine <i class="fas fa-plus-square right"></i>
         </a>
     </div>
@@ -15,14 +15,29 @@
 <div class="row">
     {% for cuisine in cuisines %}
         <div class="col s12 m4">
-            <div class="card orange darken-1 text-shadow center-align">
-                <div class="card-content white-text">
+            <div class="card center-align hoverable">
+                <div class="card-content">
                     <span class="card-title">Cuisine Name: <em>{{ cuisine.cuisine_name }}</em></span>
                 </div>
                 <div class="card-action">
-                    <a href="{{ url_for('edit_cuisine', cuisine_id=cuisine.id) }}" class="btn green accent-4">Edit</a>
-                    <a href="{{ url_for('delete_cuisine', cuisine_id=cuisine.id) }}" class="btn light-blue lighten-1">Delete</a>
+                    <a href="{{ url_for('edit_cuisine', cuisine_id=cuisine.id) }}" class="btn-small orange darken-3 hoverable">Edit</a>
+                    <a href="#modal1-{{ cuisine.id }}" class="btn-small red darken-2 modal-trigger hoverable">Delete</a>
                 </div>
+            </div>
+        </div>
+
+
+        <div id="modal1-{{ cuisine.id }}" class="modal orange darken-2 white-text text-shadow s12 m4 offset-m4">
+            <div class="modal-content">
+                <h4>Do you really want to delete this recipe?</h4>
+                <p>This cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="{{ url_for('delete_cuisine', cuisine_id=cuisine.id) }}"
+                    class="modal-close btn-small orange darken-2">Yes, delete this recipe</a>
+                <a href="{{ url_for('get_cuisines') }}" role="button" class="modal-close btn-small red accent-4">No, take
+                    me
+                    back</a>
             </div>
         </div>
     {% endfor %}

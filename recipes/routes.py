@@ -146,7 +146,7 @@ def delete_recipe(recipe_id):
     if "user" not in session or session["user"] != recipe["created_by"]:
         flash("You can only delete your own recipes!")
         return redirect(url_for("get_recipes"))
-
+    
     mydb["recipes"].delete_one({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
@@ -158,7 +158,7 @@ def get_cuisines():
     if "user" not in session or session["user"] != "admin":
         flash("You must be admin to manage cuisines!")
         return redirect(url_for("get_recipes"))
-
+    
     cuisines = list(Cuisine.query.order_by(Cuisine.cuisine_name).all())
     return render_template("cuisines.html", cuisines=cuisines)
 
@@ -205,3 +205,15 @@ def delete_cuisine(cuisine_id):
     # c_name = mydb["recipes"].find()
     mydb["recipes"].delete_many({"cuisine_name": str(cuisine)})
     return redirect(url_for("get_cuisines"))
+
+
+@app.route("/full_recipe/<recipe_id>")
+def full_recipe(recipe_id):
+    """
+    Displays full recipe including steps and ingredients
+    """
+    recipes = mydb["recipes"].find({"_id": ObjectId(recipe_id)})
+    return render_template("full_recipe.html", recipes=recipes)
+
+
+
