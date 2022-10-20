@@ -39,13 +39,15 @@
                 </div>
             </div>
             <div class="card-action">
-                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}"
-                    class="btn-small orange darken-3 text-shadow">View Full Recipe <i
-                        class="fa-solid fa-forward white-text darken-3"></i> </a>
                 <a href="#modal1-{{ recipe._id }}" class="btn-small  red darken-2 modal-trigger"><i
                         class="fa-solid fa-trash white-text darken-3"></i> Delete</a>
                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small orange darken-3"><i
                         class="fa-solid fa-pen-to-square white-text darken-3"></i> Edit</a>
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}"
+                    class="btn-small orange darken-3 text-shadow">View Full Recipe <i
+                        class="fa-solid fa-forward white-text darken-3"></i></a>                
             </div>
         </div>
         <div id="modal1-{{ recipe._id }}" class="modal orange darken-2 white-text text-shadow s12 m4 offset-m4">
