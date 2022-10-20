@@ -41,10 +41,8 @@
         </div>
         <div class="modal-footer">
             <a href="{{ url_for('delete_cuisine', cuisine_id=cuisine.id) }}"
-                class="modal-close btn-small orange darken-2">Yes, delete this recipe</a>
-            <a href="{{ url_for('get_cuisines') }}" role="button" class="modal-close btn-small red accent-4">No, take
-                me
-                back</a>
+                class="modal-close btn-small orange darken-2">Yes</a>
+            <a href="{{ url_for('get_cuisines') }}" role="button" class="modal-close btn-small red accent-4">No</a>
         </div>
     </div>
     {% endfor %}
