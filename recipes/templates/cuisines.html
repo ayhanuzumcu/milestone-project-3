@@ -1,8 +1,12 @@
 {% extends "base.html" %}
+{% block title %}Cuisines{% endblock %}
 {% block content %}
+
+<!-- Title -->
 
 <h3 class="center-align orange-text text-darken-4">Cuisine List</h3>
 
+<!-- Add Button -->
 
 <div class="row">
     <div class="col s12 center-align">
@@ -11,95 +15,38 @@
         </a>
     </div>
 </div>
- 
+
+<!-- Cuisines -->
+
 <div class="row">
     {% for cuisine in cuisines %}
-        <div class="col s12 m4">
-            <div class="card center-align hoverable">
-                <div class="card-content">
-                    <span class="card-title">Cuisine Name: <em>{{ cuisine.cuisine_name }}</em></span>
-                </div>
-                <div class="card-action">
-                    <a href="{{ url_for('edit_cuisine', cuisine_id=cuisine.id) }}" class="btn-small orange darken-3 hoverable">Edit</a>
-                    <a href="#modal1-{{ cuisine.id }}" class="btn-small red darken-2 modal-trigger hoverable">Delete</a>
-                </div>
+    <div class="col s12 m4">
+        <div class="card center-align hoverable">
+            <div class="card-content">
+                <span class="card-title">Cuisine Name: <em>{{ cuisine.cuisine_name }}</em></span>
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for('edit_cuisine', cuisine_id=cuisine.id) }}"
+                    class="btn-small orange darken-3 hoverable"><i
+                        class="fa-solid fa-pen-to-square white-text darken-3"></i> Edit</a>
+                <a href="#modal1-{{ cuisine.id }}" class="btn-small red darken-2 modal-trigger hoverable"><i
+                        class="fa-solid fa-trash white-text darken-3"></i> Delete</a>
             </div>
         </div>
-
-
-        <div id="modal1-{{ cuisine.id }}" class="modal orange darken-2 white-text text-shadow s12 m4 offset-m4">
-            <div class="modal-content">
-                <h4>Do you really want to delete this recipe?</h4>
-                <p>This cannot be undone.</p>
-            </div>
-            <div class="modal-footer">
-                <a href="{{ url_for('delete_cuisine', cuisine_id=cuisine.id) }}"
-                    class="modal-close btn-small orange darken-2">Yes, delete this recipe</a>
-                <a href="{{ url_for('get_cuisines') }}" role="button" class="modal-close btn-small red accent-4">No, take
-                    me
-                    back</a>
-            </div>
+    </div>
+    <div id="modal1-{{ cuisine.id }}" class="modal orange darken-2 white-text text-shadow s12 m4 offset-m4">
+        <div class="modal-content">
+            <h4>Do you really want to delete this recipe?</h4>
+            <p>This cannot be undone.</p>
         </div>
+        <div class="modal-footer">
+            <a href="{{ url_for('delete_cuisine', cuisine_id=cuisine.id) }}"
+                class="modal-close btn-small orange darken-2">Yes, delete this recipe</a>
+            <a href="{{ url_for('get_cuisines') }}" role="button" class="modal-close btn-small red accent-4">No, take
+                me
+                back</a>
+        </div>
+    </div>
     {% endfor %}
-</div> 
-
-
-
-
-
-
-
-
-
-
-
-<!-- <ul class="collapsible">
-    {% for recipe in recipes %}
-     <li>
-        <div class="collapsible-header orange darken-1 white-text text-shadow">
-            <div class="col s3 offset-m2">
-                <i class="fas fa-caret-down"></i>
-                {% if session.user|lower == recipe.created_by|lower %}
-                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small green accent-4">Done</a>
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                {% endif %}
-            </div>
-            <div class="col s3" style="padding-left: 20px ;">
-                <strong>{{ recipe.recipe_name }}, {{ recipe.cuisine_name }} Cuisine - <em>created by: {{ recipe.created_by }}</em></strong>
-                
-            </div>
-        </div>
-        <div class="collapsible-body">
-            <div class="row s12">
-                <div class="col m6 s12">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="{{ recipe.img_url }}">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col m6 s12">
-                    <div class="row">
-                        <div class="col s12">
-                            <p><strong>Coking Time: </strong>{{ recipe.cooking_time }}</p>
-                            
-                            <p><strong>Serves: </strong>{{ recipe.serves }}</p>
-                            <p><strong>Ingredients: </strong></p>
-                            
-                            <p>{{ recipe.ingredients }}</p>
-                            
-                            <p><strong>Instructions: </strong></p>
-                            <p>{{ recipe.instructions }}</p>
-                            
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </li>
-    {% endfor %}
-</ul>  -->
-
+</div>
 {% endblock %}
