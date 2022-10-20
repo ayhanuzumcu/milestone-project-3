@@ -39,7 +39,7 @@
             <h4>Do you really want to delete this recipe?</h4>
             <p>This cannot be undone.</p>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer center-align">
             <a href="{{ url_for('delete_cuisine', cuisine_id=cuisine.id) }}"
                 class="modal-close btn-small orange darken-2">Yes, delete this recipe</a>
             <a href="{{ url_for('get_cuisines') }}" role="button" class="modal-close btn-small red accent-4">No, take
