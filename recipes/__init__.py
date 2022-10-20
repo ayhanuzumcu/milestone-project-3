@@ -15,6 +15,12 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 myclient = pymongo.MongoClient(app.config["MONGO_URI"])
 mydb = myclient[app.config["MONGO_DBNAME"]]
 
+
+uri = os.environ.get("DATABASE_URL")
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
+app.config["SQLALCHEMY_DATABASE_URI"] = uri  # heroku
+
 db = SQLAlchemy(app)
 mongo = PyMongo(app)
 
