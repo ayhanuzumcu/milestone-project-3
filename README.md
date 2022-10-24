@@ -15,23 +15,23 @@ When I need to return to the website, I expect to login to website then I can se
 
 I can register or login to the website.
 
-![Register](https://recipes-m.herokuapp.com/images/register.jpg "Register")
+![Register](https://recipes-m.herokuapp.com/recipes/images/register.jpg "Register")
 
-![Login](https://recipes-m.herokuapp.com/images/login.jpg "Login")
+![Login](https://recipes-m.herokuapp.com/recipes/images/login.jpg "Login")
 
 And also I can add and edit my recipes.
 
-![Add Recipe](https://recipes-m.herokuapp.com/images/add_recipe.jpg "Add Recipe")
+![Add Recipe](https://recipes-m.herokuapp.com/recipes/images/add_recipe.jpg "Add Recipe")
 
-![Edit Recipe](https://recipes-m.herokuapp.com/images/edit_recipe.jpg "Edit Recipe")
+![Edit Recipe](https://recipes-m.herokuapp.com/recipes/images/edit_recipe.jpg "Edit Recipe")
 
 I can see all recipes list.
 
-![Recipe List](https://recipes-m.herokuapp.com/images/recipe_list.jpg "Recipe List")
+![Recipe List](https://recipes-m.herokuapp.com/recipes/images/recipe_list.jpg "Recipe List")
 
 I can see any recipe's full information.
 
-![Full Recipe](https://recipes-m.herokuapp.com/images/full_recipe.jpg "Full Recipe")
+![Full Recipe](https://recipes-m.herokuapp.com/recipes/images/full_recipe.jpg "Full Recipe")
 
 
 
@@ -47,23 +47,23 @@ For all users, they can search and see all recipes even if they do not add them.
 ### Skeleton
 #### Wireframes
 
-[Main Page](https://recipes-m.herokuapp.com/wireframes/recipes.png)
+[Main Page](https://recipes-m.herokuapp.com/recipes/wireframes/recipes.png)
 
-[Register](https://recipes-m.herokuapp.com/wireframes/register.png)
+[Register](https://recipes-m.herokuapp.com/recipes/wireframes/register.png)
 
-[Log In](https://recipes-m.herokuapp.com/wireframes/login.png)
+[Log In](https://recipes-m.herokuapp.com/recipes/wireframes/login.png)
 
-[My Recipes](https://recipes-m.herokuapp.com/wireframes/my_recipes.png)
+[My Recipes](https://recipes-m.herokuapp.com/recipes/wireframes/my_recipes.png)
 
-[Full Recipe](https://recipes-m.herokuapp.com/wireframes/full_recipe.png)
+[Full Recipe](https://recipes-m.herokuapp.com/recipes/wireframes/full_recipe.png)
 
-[Add Recipe](https://recipes-m.herokuapp.com/wireframes/add_recipe.png)
+[Add Recipe](https://recipes-m.herokuapp.com/recipes/wireframes/add_recipe.png)
 
-[Edit Recipe](https://recipes-m.herokuapp.com/wireframes/edit_recipe.png)
+[Edit Recipe](https://recipes-m.herokuapp.com/recipes/wireframes/edit_recipe.png)
 
-[Manage Cuisines](https://recipes-m.herokuapp.com/wireframes/cuisine_list.png)
+[Manage Cuisines](https://recipes-m.herokuapp.com/recipes/wireframes/cuisine_list.png)
 
-[Add Cuisines](https://recipes-m.herokuapp.com/wireframes/add_cuisine.png)
+[Add Cuisines](https://recipes-m.herokuapp.com/recipes/wireframes/add_cuisine.png)
 
 ### Surface
 
@@ -102,9 +102,9 @@ You can find the links to the test results here:
 
 You can find the screenshoots here:
 
-[HTML Test Result](https://recipes-m.herokuapp.com/images/HTML.jpg)
+[HTML Test Result](https://recipes-m.herokuapp.com/recipes/images/HTML.jpg)
 
-[CSS Test Result](https://recipes-m.herokuapp.com/images/CSS.jpg)
+[CSS Test Result](https://recipes-m.herokuapp.com/recipes/images/CSS.jpg)
 
 During the self-testing, I have added a defensive programming then users can not delete recepies accidentally.
 
