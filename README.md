@@ -57,13 +57,13 @@ For all users, they can search and see all recipes even if they do not add them.
 
 [Full Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/full_recipe.png)
 
-[Add Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/add_recipe.jpg)
+[Add Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/add_recipe.png)
 
 [Edit Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/edit_recipe.png)
 
-[Manage Cuisines](https://recipes-m.herokuapp.com/recipes/wireframes/cuisine_list.png)
+[Manage Cuisines](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/cuisine_list.png)
 
-[Add Cuisines](https://recipes-m.herokuapp.com/recipes/wireframes/add_cuisine.png)
+[Add Cuisines](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/add_cuisine.png)
 
 ### Surface
 
