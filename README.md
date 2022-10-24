@@ -1,108 +1,146 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# RECIPES 
 
-Welcome ayhanuzumcu,
+This is website for all who want to get recipes from around the world and who love cooking. People can add their own recipes, edit and delete them when needed.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Demo
+A live demo can be found [here](https://recipes-m.herokuapp.com/).
 
-## Gitpod Reminders
+## UX
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### User stories
 
-`python3 -m http.server`
+As a visitor of the Recipes website, I expect to search for recipes from different cuisines, view them and can register to add my own recipes. 
+When I need to return to the website, I expect to login to website then I can see my recipes. Also I can search recipes, edit and delete my own recipes.
 
-A blue button should appear to click: _Make Public_,
+I can register or login to the website.
 
-Another blue button should appear to click: _Open Browser_.
+![Register](https://recipes-m.herokuapp.com/images/register.jpg "Register")
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Login](https://recipes-m.herokuapp.com/images/login.jpg "Login")
 
-A blue button should appear to click: _Make Public_,
+And also I can add and edit my recipes.
 
-Another blue button should appear to click: _Open Browser_.
+![Add Recipe](https://recipes-m.herokuapp.com/images/add_recipe.jpg "Add Recipe")
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![Edit Recipe](https://recipes-m.herokuapp.com/images/edit_recipe.jpg "Edit Recipe")
 
-To log into the Heroku toolbelt CLI:
+I can see all recipes list.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![Recipe List](https://recipes-m.herokuapp.com/images/recipe_list.jpg "Recipe List")
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+I can see any recipe's full information.
 
-------
+![Full Recipe](https://recipes-m.herokuapp.com/images/full_recipe.jpg "Full Recipe")
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Strategy
+My aim for the website design was in the easiest way possible to login, to add, edit, delete and search recipes while trying to make a website for user-friendly page.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Scope
+For cooking lovers and users, I wanted to provide them to see, search recipes and add, edit, delete recipes to create their recipe inventory.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Structure
+For all users, they can search and see all recipes even if they do not add them. And also they can add their own recipes and store them on website to check later or to edit or delete them. The website is easy to use as users can navigate all around the site using navbar.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Skeleton
+#### Wireframes
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+[Main Page](https://recipes-m.herokuapp.com/wireframes/recipes.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+[Register](https://recipes-m.herokuapp.com/wireframes/register.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+[Log In](https://recipes-m.herokuapp.com/wireframes/login.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+[My Recipes](https://recipes-m.herokuapp.com/wireframes/my_recipes.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+[Full Recipe](https://recipes-m.herokuapp.com/wireframes/full_recipe.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+[Add Recipe](https://recipes-m.herokuapp.com/wireframes/add_recipe.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+[Edit Recipe](https://recipes-m.herokuapp.com/wireframes/edit_recipe.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+[Manage Cuisines](https://recipes-m.herokuapp.com/wireframes/cuisine_list.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+[Add Cuisines](https://recipes-m.herokuapp.com/wireframes/add_cuisine.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Surface
 
-------
+The orange color was used to design the page.
 
-## FAQ about the uptime script
+### Technology
 
-**Why have you added this script?**
+1. HTML
+2. CSS
+3. Materialize (1.0.0)
+4. Python 3
+5. MongoDB Atlas
+6. PostgreSQL
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+### Features
+This website was designed for several pages. For first time users, they can find register section on the main page. After registration, Recipe list is shown and the user can also access New Recipe and My Recipe section. Under My Recipe page, the user can edit and delete their own recipe. Every delete button on every recipe card has a defensive programming modal built. When the user wants to delete a recipe, a modal pop up appears and asking the user to confirm if they want to delete or not. The admin can only add, edit and delete cuisines to the website. When admin deletes a cuisine, any recipe under this cuisine will delete automatically because of the relation in the databases between cuisine and recipes. The site was build for mobile friendly using Materialize features. 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Testing
+When you look at this website can find information about the recipes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+All navigation links have been tested all over the website.
 
-**So….?**
+All forms and their validation have been tested. If you do not fill the form, you will be notified because the "required" attribute was added to each fields of the form. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+This website was tested on different browsers and mobile devices to make sure everything is working correctly. On mobile devices, the page was looking responsive and all sections was shown in the middle.
 
-**Can I opt out?**
+HMTL and CSS codes were tested on W3C Validation Service and both tests were passed.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+You can find the links to the test results here:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+[HTML Test Result Link](#)
 
-**Anything more?**
+[CSS Test Result Link](#)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+You can find the screenshoots here:
 
----
+[HTML Test Result](https://recipes-m.herokuapp.com/images/HTML.jpg)
 
-Happy coding!
+[CSS Test Result](https://recipes-m.herokuapp.com/images/CSS.jpg)
+
+During the self-testing, I have added a defensive programming then users can not delete recepies accidentally.
+
+Also just admin can add, edit and delete cuisines. 
+
+
+### Deployment
+#### To Heroku
+Heroku is used to deploy this project. To do this, follow these steps:
+1. In GitPod CLI create requirements.txt file and Procfile.
+2. Go to Heroku and login. Create new app, add a name and choose region.
+3. Install postgres.
+4. Insert relevant information under "Config Vars" like IP, PORT, SECRET_KEY, DATABASE_URL.
+5. Navigate to the Deploy tab and select GitHub. Search for your repo and click connect.
+6. Select "Enable Automatic Deploys"
+7. Click "Deploy Branch"
+8. Click "Open App" to see the website.
+
+
+## Credits
+
+### Content
+Materialize was used to create the design with responsiveness and styling of the website. Stack Overflow and W3C Schools websites were used to provide some source of codes relating to HTML and CSS. Also I followed the Task Manager Walk Through Project from Code Institute for doing this project.
+
+### Media
+
+Recipes and photos have been taken from:
+
+[My Food Book](https://www.myfoodbook.com.au)
+
+[Delish](https://www.delish.com)
+
+[Eating Well](https://www.eatingwell.com) 
+
+[The Spruce Eats](https://www.thespruceeats.com)
+
+[BBC Recipes](https://www.bbc.co.uk/food/recipes)
+
+All icons were taken from [Font Awesome](https://www.fontawesome.com/) website.

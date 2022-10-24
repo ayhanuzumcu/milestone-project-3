@@ -8,16 +8,16 @@
 
 <!-- Full Recipe Details -->
 
-<div class="container">
+<div class="col">
     <div class="row">
         {% for recipe in recipes %}
         <div class="col s12">
             <div class="card orange-text text-darken-4 hoverable">
                 <div class="card-content center-align">
-                    <span class="card-title">
+                    <div class="card-title">
                         <p><strong>{{ recipe.recipe_name }}, {{ recipe.cuisine_name }} Cuisine</strong></p>
-                    </span>
-                    <img class="full-recipe-img" src="{{ recipe.img_url }}">
+                    </div>
+                    <img class="full-recipe-img" src="{{ recipe.img_url }}" alt="{{ recipe.recipe_name }}">
                 </div>
                 <div class="row">
                     <div class="card-content orange-text text-darken-4 center-align">
