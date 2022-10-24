@@ -15,23 +15,23 @@ When I need to return to the website, I expect to login to website then I can se
 
 I can register or login to the website.
 
-![Register](https://recipes-m.herokuapp.com/recipes/images/register.jpg "Register")
+![Register](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/register.jpg "Register")
 
-![Login](https://recipes-m.herokuapp.com/recipes/images/login.jpg "Login")
+![Login](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/login.jpg "Login")
 
 And also I can add and edit my recipes.
 
-![Add Recipe](https://recipes-m.herokuapp.com/recipes/images/add_recipe.jpg "Add Recipe")
+![Add Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/add_recipe.jpg "Add Recipe")
 
-![Edit Recipe](https://recipes-m.herokuapp.com/recipes/images/edit_recipe.jpg "Edit Recipe")
+![Edit Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/edit_recipe.jpg "Edit Recipe")
 
 I can see all recipes list.
 
-![Recipe List](https://recipes-m.herokuapp.com/recipes/images/recipe_list.jpg "Recipe List")
+![Recipe List](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/recipe_list.jpg "Recipe List")
 
 I can see any recipe's full information.
 
-![Full Recipe](https://recipes-m.herokuapp.com/recipes/images/full_recipe.jpg "Full Recipe")
+![Full Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/full_recipe.jpg "Full Recipe")
 
 
 
@@ -47,19 +47,19 @@ For all users, they can search and see all recipes even if they do not add them.
 ### Skeleton
 #### Wireframes
 
-[Main Page](https://recipes-m.herokuapp.com/recipes/wireframes/recipes.png)
+[Main Page](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/recipes.png)
 
-[Register](https://recipes-m.herokuapp.com/recipes/wireframes/register.png)
+[Register](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/register.png)
 
-[Log In](https://recipes-m.herokuapp.com/recipes/wireframes/login.png)
+[Log In](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/login.png)
 
-[My Recipes](https://recipes-m.herokuapp.com/recipes/wireframes/my_recipes.png)
+[My Recipes](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/my_recipes.png)
 
-[Full Recipe](https://recipes-m.herokuapp.com/recipes/wireframes/full_recipe.png)
+[Full Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/full_recipe.png)
 
-[Add Recipe](https://recipes-m.herokuapp.com/recipes/wireframes/add_recipe.png)
+[Add Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/add_recipe.jpg)
 
-[Edit Recipe](https://recipes-m.herokuapp.com/recipes/wireframes/edit_recipe.png)
+[Edit Recipe](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/wireframes/edit_recipe.png)
 
 [Manage Cuisines](https://recipes-m.herokuapp.com/recipes/wireframes/cuisine_list.png)
 
