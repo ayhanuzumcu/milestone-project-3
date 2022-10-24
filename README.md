@@ -92,19 +92,19 @@ All forms and their validation have been tested. If you do not fill the form, yo
 
 This website was tested on different browsers and mobile devices to make sure everything is working correctly. On mobile devices, the page was looking responsive and all sections was shown in the middle.
 
-HMTL and CSS codes were tested on W3C Validation Service and both tests were passed.
+HMTL and CSS codes were tested on W3C Validation Service and both tests were passed but there is an error related to Materialize CSS file on CSS results.
 
 You can find the links to the test results here:
 
-[HTML Test Result Link](#)
+[HTML Test Result Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Frecipes-m.herokuapp.com%2F)
 
-[CSS Test Result Link](#)
+[CSS Test Result Link](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Frecipes-m.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 You can find the screenshoots here:
 
-[HTML Test Result](https://recipes-m.herokuapp.com/recipes/images/HTML.jpg)
+[HTML Test Result](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/HTML.jpg)
 
-[CSS Test Result](https://recipes-m.herokuapp.com/recipes/images/CSS.jpg)
+[CSS Test Result](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/CSS.jpg)
 
 During the self-testing, I have added a defensive programming then users can not delete recepies accidentally.
 
