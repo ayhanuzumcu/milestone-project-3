@@ -215,16 +215,13 @@ def delete_cuisine(cuisine_id):
     cuisine = Cuisine.query.get_or_404(cuisine_id)
     db.session.delete(cuisine)
     db.session.commit()
-    # c_name = mydb["recipes"].find()
     mydb["recipes"].delete_many({"cuisine_name": str(cuisine)})
     return redirect(url_for("get_cuisines"))
 
 
 @app.route("/full_recipe/<recipe_id>")
 def full_recipe(recipe_id):
-    """
-    Displays full recipe including steps and ingredients
-    """
+    
     recipes = mydb["recipes"].find({"_id": ObjectId(recipe_id)})
     return render_template("full_recipe.html", recipes=recipes)
 
