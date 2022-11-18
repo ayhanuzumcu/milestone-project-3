@@ -4,6 +4,7 @@
     margin:0;
     padding:0;
     border:0;
+    box-sizing: border-box;
 }
 
 body {
@@ -21,10 +22,34 @@ body {
     line-height: 2;
 }
 
-.card-image img {
-    height: 300px;
-    width: 60%;
-    margin-bottom: 30px;
+.box-img {
+    height: 350px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: rgb(207, 198, 195);
+       
+}
+
+.outer {
+    display: inline-block; 
+    margin: 20px;
+}
+
+.frame{  
+    width: 300px;
+    height: 250px;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+}
+
+.frame img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+    
+       
 }
 
 .button {

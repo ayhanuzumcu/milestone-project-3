@@ -35,7 +35,12 @@
     <div class="col s12 m6 l4">
         <div class="card center-align border hoverable">
             <div class="card-content">
-                <div class="card-image"><img src="{{ recipe.img_url }}" alt="{{ recipe.recipe_name }}"></div>
+                <div class="outer">
+                    <div class="frame">
+                        <img src="{{ recipe.img_url }}" alt="{{ recipe.recipe_name }}">
+                    </div>
+                    <!-- <div class="card-image"></div> -->
+                </div>
                 <div class="card-title">
                     <p><strong>{{ recipe.recipe_name }}</strong></p>
                     <p><strong>{{ recipe.cuisine_name }} Cuisine</strong></p>
