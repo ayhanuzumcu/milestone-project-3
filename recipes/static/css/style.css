@@ -30,6 +30,7 @@ body {
        
 }
 
+/* outer, frame and frame>img classes content was taken from stackoverflow website. It helps to fix the image strecthing issue*/
 .outer {
     display: inline-block; 
     margin: 20px;

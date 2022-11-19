@@ -79,6 +79,13 @@ The orange color was used to design the page.
 6. PostgreSQL
 
 
+### Database Schema
+![Database Schema](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/db_schema.jpg "Full Recipe")
+
+Database divided into three sections: Cuisine, users and recipes. Postgresql database was used for "cuisine" and "users" tables and MongoDB database was used for the "recipes" collection. There is a relationship on "cuisine_name" data between these databases.
+
+
+
 ### Features
 This website was designed for several pages. For first time users, they can find register section on the main page. After registration, Recipe list is shown and the user can also access New Recipe and My Recipe section. Under My Recipe page, the user can edit and delete their own recipe. Every delete button on every recipe card has a defensive programming modal built. When the user wants to delete a recipe, a modal pop up appears and asking the user to confirm if they want to delete or not. The admin can only add, edit and delete cuisines to the website. When admin deletes a cuisine, any recipe under this cuisine will delete automatically because of the relation in the databases between cuisine and recipes. The site was build for mobile friendly using Materialize features. 
 
