@@ -80,7 +80,7 @@ The orange color was used to design the page.
 
 
 ### Database Schema
-![Database Schema](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/db_schema.jpg "Full Recipe")
+![Database Schema](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/db_schema.jpg "Database Schema")
 
 Database divided into three sections: Cuisine, users and recipes. Postgresql database was used for "cuisine" and "users" tables and MongoDB database was used for the "recipes" collection. There is a relationship on "cuisine_name" data between these databases.
 
@@ -91,11 +91,19 @@ This website was designed for several pages. For first time users, they can find
 
 
 ### Testing
-When you look at this website can find information about the recipes.
+When you look at this website you can find information about the recipes.
 
 All navigation links have been tested all over the website.
 
-All forms and their validation have been tested. If you do not fill the form, you will be notified because the "required" attribute was added to each fields of the form. 
+All forms and their validation have been tested. If you do not fill the form, you will be notified because the "required" attribute was added to each fields of the form.
+
+#### Lighthouse
+
+![Index Page](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/lighthouse.jpg "Index")
+
+![My Recipe Page](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/lighthouse_myrecipe.jpg "My Recipe Page")
+
+![Full Recipe Page](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/lighthouse_fullrecipe.jpg "Full Recipe Page")
 
 This website was tested on different browsers and mobile devices to make sure everything is working correctly. On mobile devices, the page was looking responsive and all sections was shown in the middle.
 
