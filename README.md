@@ -99,13 +99,86 @@ All forms and their validation have been tested. If you do not fill the form, yo
 
 #### Lighthouse
 
+Lighthouse chrome extension was used to determine the website’s performance, accessibility, best practices, and SEO for index, myrecipe and fullrecipe pages. All test results were passed.
+
+##### Index Page
+
 ![Index Page](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/lighthouse.jpg "Index")
+
+##### My Recipe Page
 
 ![My Recipe Page](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/lighthouse_myrecipe.jpg "My Recipe Page")
 
+##### Full Recipe Page
+
 ![Full Recipe Page](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/lighthouse_fullrecipe.jpg "Full Recipe Page")
 
-This website was tested on different browsers and mobile devices to make sure everything is working correctly. On mobile devices, the page was looking responsive and all sections was shown in the middle.
+This website was tested on different browsers and mobile devices to make sure everything is working correctly. 
+
+Manual testing of all elements and functionality on every page
+Browsers tested:
+* Google Chrome
+* Mozilla Firefox
+* Microsoft Edge
+* Safari
+
+No errors were found on the above browsers.
+
+Devices tested:
+* IPhone 12
+* IPhone 11
+* IPhone 7
+* Samsung Tablet S6
+* Samsung S20 Plus
+* Samsung Galaxy S10
+* Samsung A52
+
+No errors were found when testing on the above devices.
+
+**---**
+
+| Page  | Section   | Action    | Expected Performance  | Result |
+| ----- | --------- | --------- | --------------------- | ------ |
+| Home Page  | Tab at top of page    | On a desktop go to https://recipes-m.herokuapp.com/get_recipes    | The Home Page displays; there is a recipe list.   | Pass |
+| | Navigation Bar  | The name "Recipes" displays on the left hand side    | The name "Recipes” in the correct position   | Pass |
+| | | Confirm 3 navigation links display, which include: Home, Log In and Register    | 3 navigation links display   | Pass |
+| | | Click each navigation link    | The correct corresponding page displays   | Pass |
+| | Responsiveness  | Go to Dev Tools and confirm the page displays correctly when you reduce and expand the margins    | The correct page displays   | Pass |
+| | | Change the pixels to 992px    | The hamburger menu displays  | Pass |
+| | | Click the hamburger menu    | The Name of the website and 3 links display being which include: Home, Log In and Register  | Pass |
+| Recipe List/Home Page  | Main    | On a desktop go to https://recipes-m.herokuapp.com/get_recipes    | The Recipe List Page displays with a search bar and a reset and search links above the recipe list   | Pass |
+| | | Type “Chicken” in the search bar    | The recipe “Easy Chicken Parmesan” displays  | Pass |
+| | | Confirm the recipes display on the page    | The recipe displays with a photo of the recipe, the name of the recipe, the name of the cuisine, who created the recipe, the prep time, the cook time, serves and a link to “View Full Recipe” button  | Pass |
+| | | Click View Full Recipe    | The image of the recipe, the name of the recipe, the ingredients and instructions display  | Pass |
+| Log In Page  | Main    | On a desktop go to https://recipes-m.herokuapp.com/login     | The Log In Page displays   | Pass |
+| | | There is a prompt for Username and Password    | The prompts display  | Pass |
+| | | Click the Log In link    | A prompt displays on the Username to ask you to complete the field  | Pass |
+| | | Type a Username and click Log In    | A prompt displays on the Password to ask you to complete the field  | Pass |
+| | | There is a link underneath the Log In button to Register Account    | The Register Account link displays  | Pass |
+| | | Click the Register Account link    | The Register page displays  | Pass |
+| | | The title Register displays   | The title displays  | Pass |
+| | | There is a prompt for Username and Password   | The prompts display  | Pass |
+| | | Click the Register button   | A prompt displays on the Username to ask you to complete the field  | Pass |
+| | | Type a Username and click Log In   | A prompt displays on the Password asking you to complete the field  | Pass |
+| | | There is a link underneath the Register button to Log In   | Clicking the link displays the Log In page  | Pass |
+| Register Page  | Main    | Enter a Username and Password and click Register     | You are taken to the Profile page and “Registration Successful” displays   | Pass |
+| | | Click the Log Out button   | You are taken to the Login page and “You have been logged out” displays  | Pass |
+| Log In Page  | Main    | Enter a Username and Password that you registered with    | You are taken to the Profile page and “Welcome, 'username' ” displays   | Pass |
+| Add Recipe Page  | Main    | Click the New Recipe link    | The Add Recipe Page displays   | Pass |
+|  | Main    | The Add Recipe form displays    | The sections to complete are Choose Cuisine, Recipe Name, Preparation time, Cooking Time, Serves (which is number only), Ingredients, Instructions and there is a part to Add an Image URL and all fields are mandatory   | Pass |
+| | | Click Add Recipe   | The Recipe List page displays with a message stating the “Recipe Successfully Added” on the top of the page  | Pass |
+| My Recipes Page  | Main    | Click the My Recipes link    | The My Recipe List page that was added displays with an edit and delete button   | Pass |
+| | | Click the Edit button   | The Edit Recipe page displays with all the fields populated  | Pass |
+| | | Go to the bottom of the page and click Cancel   | The Recipe List page displays  | Pass |
+| | | Go back to the My Recipes page   | The My Recipe List page displays  | Pass |
+| | | Click the Edit button   | The Edit Recipe page displays with all the fields populated  | Pass |
+| | | Make a change to the recipe and click Edit Recipe   | The Recipe List page displays and the change has been saved, you may have to click View Full Recipe to see some changes, all depends on where you made the change, A flash message stating the “Recipe Successfully” Updated displays  | Pass |
+| | | Click My Recipes and delete the recipe that you created   | The pop-up message “Do you really want to delete this recipe?” displays and click Yes. Then Recipe List page display with a message stating the “Recipe Successfully Deleted”  | Pass |
+| | | Click My Recipes   | The recipe has been deleted  | Pass |
+
+**---**
+
+#### W3C Validation 
 
 HMTL and CSS codes were tested on W3C Validation Service and both tests were passed but there is an error related to Materialize CSS file on CSS results.
 
@@ -124,6 +197,14 @@ You can find the screenshoots here:
 During the self-testing, I have added a defensive programming then users can not delete recepies accidentally.
 
 Also just admin can add, edit and delete cuisines. 
+
+#### Bugs/Fixes
+
+**Images on the recipe and my recipe pages**
+
+**Issue**: I had an issue with the quality of the images as they appeared stretched.
+* **FIX**: I added an outer div before the picture frame div. And I added outer class for the outer div and frame class for the picture frame div and I added height to 300px and width to 250px for the outer div in the css file.
+
 
 
 ### Deployment
