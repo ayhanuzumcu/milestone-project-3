@@ -101,9 +101,9 @@ All forms and their validation have been tested. If you do not fill the form, yo
 
 Lighthouse chrome extension was used to determine the website’s performance, accessibility, best practices, and SEO for index, myrecipe and fullrecipe pages. All test results were passed.
 
-##### Index Page
+##### Home Page
 
-![Index Page](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/lighthouse.jpg "Index")
+![Home Page](https://raw.githubusercontent.com/ayhanuzumcu/milestone-project-3/main/recipes/images/lighthouse.jpg "Home")
 
 ##### My Recipe Page
 
